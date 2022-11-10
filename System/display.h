@@ -40,11 +40,11 @@ void DisplaySetting()
     // set the eye position, look-at position, and up-vector:
     if (WhichViewMode == INSIDE)
     {
-        gluLookAt(0, 1.2, 1, 0., 5, 10., 0., 1., 0.);
+        gluLookAt(0, 0., 10,  0., 0, -100,    0., 1., 0.);
     }
     else
     {
-        gluLookAt(0, 5., 20., 0., 5., 0, 0., 1., 0.);
+        gluLookAt(0, 0., 10,  0., 0, -100,    0., 1., 0.);
     }
 
     // rotate the scene:

@@ -40,7 +40,7 @@ GLuint OSUSphere(float radius, int slices, int stacks, float x, float y, float z
     GLuint osusphereList = glGenLists(1);
     glNewList(osusphereList, GL_COMPILE);
     glPushMatrix();
-    SetMaterial(0., 0.3, 0.7, 1);
+    SetMaterial(1, 1, 1, 1);
     glTranslatef(x, y, z);
     // glRotatef(90., 0., 1., 0.);
     SphNumLngs = slices;
@@ -189,13 +189,13 @@ void OSUSphereDisplay(GLuint osusphereList)
     glDisable(GL_TEXTURE_2D);
     glPopMatrix();
 }
-void OSUSphereDisplayTextureOn(GLuint osusphereList)
+void OSUSphereDisplayTextureOn(GLuint osusphereList, GLuint texture1)
 {
     glPushMatrix();
     glEnable(GL_TEXTURE_2D);
     SetMaterial(0., 1., 0., 1);
     glBindTexture(GL_TEXTURE_2D, 0);
-    glBindTexture(GL_TEXTURE_2D, Tex0);
+    glBindTexture(GL_TEXTURE_2D, texture1);
     glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
     glCallList(osusphereList);
     glDisable(GL_TEXTURE_2D);

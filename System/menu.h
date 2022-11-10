@@ -85,7 +85,7 @@ void Reset()
     Scale = 1.0;
     ShadowsOn = 0;
     WhichColor = WHITE;
-    WhichProjection = PERSP;
+    WhichProjection = ORTHO;
     Xrot = Yrot = 0.;
 }
 void DoViewModeMenu(int id)

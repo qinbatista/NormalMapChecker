@@ -32,8 +32,8 @@ void SetLight()
 }
 void SetPointLight_GL_SMOOTH(int ilight, float x, float y, float z, float r, float g, float b)
 {
+    glShadeModel(GL_SMOOTH);
     glLightfv(ilight, GL_POSITION, Array3(x, y, z));
-
     glLightfv(ilight, GL_AMBIENT, Array3(0., 0., 0.));
     glLightfv(ilight, GL_DIFFUSE, Array3(r, g, b));
     glLightfv(ilight, GL_SPECULAR, Array3(r, g, b));
@@ -46,17 +46,14 @@ void SetPointLight_GL_SMOOTH(int ilight, float x, float y, float z, float r, flo
 }
 void SetPointLight(int ilight, float x, float y, float z, float r, float g, float b)
 {
-    glShadeModel(GL_SMOOTH);
-    glLightfv(ilight, GL_POSITION, Array3(x, y, z));
 
+    glLightfv(ilight, GL_POSITION, Array3(x, y, z));
     glLightfv(ilight, GL_AMBIENT, Array3(0., 0., 0.));
     glLightfv(ilight, GL_DIFFUSE, Array3(r, g, b));
     glLightfv(ilight, GL_SPECULAR, Array3(r, g, b));
-
     glLightf(ilight, GL_CONSTANT_ATTENUATION, 1.);
     glLightf(ilight, GL_LINEAR_ATTENUATION, 0.);
     glLightf(ilight, GL_QUADRATIC_ATTENUATION, 0.);
-
     glEnable(ilight);
 }
 
