@@ -50,18 +50,18 @@ void WorldInitial()
 {
     CreateAxis();
     // Textures
-    texture = LoadTexture("Texture/worldtex.bmp");
+    // texture = LoadTexture("Texture/worldtex.bmp");
+    texture = LoadTexture("Texture/monster.bmp");
     //Objects
     panel2D = Panel2D();
     // Lights
     SetLight();
-    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 100,    1, 1, 1);
 
 }
 
 void WorldDisplay()
 {
-
+    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 100,    1, 1, 1);
     BindTexture(panel2D,texture);
     OSUSphereDisplayTextureOn(OSUSphere(1.0, 20, 20, 0, 1, 0),texture);
 }
