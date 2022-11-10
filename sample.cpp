@@ -49,17 +49,19 @@ int main(int argc, char *argv[])
 void WorldInitial()
 {
     CreateAxis();
-    // Texture
+    // Textures
     texture = LoadTexture("Texture/worldtex.bmp");
+    //Objects
     panel2D = Panel2D();
-    // Light
+    // Lights
     SetLight();
+    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 100,    1, 1, 1);
 
 }
 
 void WorldDisplay()
 {
-    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 100,    1, 1, 1);
+
     BindTexture(panel2D,texture);
     OSUSphereDisplayTextureOn(OSUSphere(1.0, 20, 20, 0, 1, 0),texture);
 }
@@ -67,19 +69,6 @@ void WorldDisplay()
 void WorldUpdate()
 {
     int ms = glutGet(GLUT_ELAPSED_TIME); // milliseconds
-    // ms =
-    // ms %= MS_IN_THE_ANIMATION_CYCLE;
-    // TimeCycle = (float)ms / (float)MS_IN_THE_ANIMATION_CYCLE; // [0., 1.]
     TimeCycle = sin((float)ms / (float)MS_IN_THE_ANIMATION_CYCLE);
-    // if (TimeCycle >= 0.9 && TimeCycleReverse == false)
-    // {
-    //     TimeCycleReverse = true;
-    //     TimeCycle = 1 - TimeCycle;
-    // }
-    // if (TimeCycle <= 0.1 && TimeCycleReverse == true)
-    // {
-    //     TimeCycleReverse = false;
-    //     TimeCycle = TimeCycle;
-    // }
     OSUSphereAnimation(TimeCycle);
 }
