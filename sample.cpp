@@ -51,7 +51,7 @@ void WorldInitial()
     CreateAxis();
     // Textures
     // texture = LoadTexture("Texture/worldtex.bmp");
-    texture = LoadTexture("Texture/monster.bmp");
+    texture = LoadTexture("Texture/worldtex.bmp");
     //Objects
     panel2D = Panel2D();
     // Lights
