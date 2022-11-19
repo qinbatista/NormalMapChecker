@@ -48,27 +48,41 @@ int main(int argc, char *argv[])
 }
 void WorldInitial()
 {
-    CreateAxis();
-    // Textures
-    // texture = LoadTexture("Texture/worldtex.bmp");
-    texture = LoadTexture("Texture/monster.bmp");
-    //Objects
-    panel2D = Panel2D();
-    // Lights
-    SetLight();
+    CreateAxis();// create the axis
+    SetLight();// Lights
+
+
+    texture = LoadTexture("Texture/dragon.bmp");//earth texture
+    // texture = LoadTexture("Texture/monster.bmp"); // my texture
+    panel2D = Panel2D();// create panel objects
+
+    //Initial shader
+    Pattern = new GLSLProgram();
+    Pattern->Create("Shader/normal.vert", "Shader/normal.frag");
+    Pattern->SetVerbose(false);
 
 }
 
 void WorldDisplay()
 {
-    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 100,    1, 1, 1);
-    BindTexture(panel2D,texture);
-    OSUSphereDisplayTextureOn(OSUSphere(1.0, 20, 20, 0, 1, 0),texture);
+    SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 1,    1, 1, 1);
+
+    //Display Shader
+    Pattern->Use();
+    Pattern->SetUniformVariable("uTime", TimeCycle);
+    Pattern->SetUniformVariable("uTime", TimeCycle);
+    Pattern->SetUniformVariable("uKa", 1);
+    Pattern->SetUniformVariable("uKd", TimeCycle);
+    Pattern->SetUniformVariable("uKs", 1);
+    Pattern->SetUniformVariable("uSpecularColor", 1);
+    BindTexture(panel2D, texture);
+    Pattern->UnUse();
+
+
 }
 
 void WorldUpdate()
 {
     int ms = glutGet(GLUT_ELAPSED_TIME); // milliseconds
     TimeCycle = sin((float)ms / (float)MS_IN_THE_ANIMATION_CYCLE);
-    OSUSphereAnimation(TimeCycle);
 }
