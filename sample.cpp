@@ -53,7 +53,7 @@ void WorldInitial()
 
 
     texture = LoadTexture("Texture/dragon.bmp");//earth texture
-    // texture = LoadTexture("Texture/monster.bmp"); // my texture
+    // texture = LoadTexture("Texture/worldtex.bmp"); // my texture
     panel2D = Panel2D();// create panel objects
 
     //Initial shader
