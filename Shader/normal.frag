@@ -4,9 +4,12 @@ uniform float uKd;
 uniform float uKs;
 uniform float uShininess;
 uniform float uFreq;
-uniform sampler2D Color_Map; uniform sampler2D Normal_Map;
-in vec3 EC_SurfacePosition; in vec3 EC_EyePosition;
-in vec3 EC_SurfaceNormal; in vec3 EC_LightPosition;
+uniform sampler2D Color_Map;
+uniform sampler2D Normal_Map;
+in vec3 EC_SurfacePosition;
+in vec3 EC_EyePosition;
+in vec3 EC_SurfaceNormal;
+in vec3 EC_LightPosition;
 in vec2 vST;
 
 void main( )

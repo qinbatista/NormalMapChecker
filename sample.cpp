@@ -40,6 +40,7 @@ Curve Curves[10]; // if you are creating a pattern of curves
 Curve Stem;       // if you are not
 
 GLuint texture;
+GLuint texture_Normal;
 GLuint panel2D;
 int main(int argc, char *argv[])
 {
@@ -53,6 +54,7 @@ void WorldInitial()
 
 
     texture = LoadTexture("Texture/dragon.bmp");//earth texture
+    texture_Normal = LoadTexture("Texture/dragon.png");//earth texture
     // texture = LoadTexture("Texture/worldtex.bmp"); // my texture
     panel2D = Panel2D();// create panel objects
 
@@ -66,19 +68,23 @@ void WorldInitial()
 void WorldDisplay()
 {
     SetPointLight_GL_SMOOTH(GL_LIGHT1, 0, 0, 1,    1, 1, 1);
+    glActiveTexture(GL_TEXTURE5);
+	glBindTexture(GL_TEXTURE_2D, texture);
+	// glActiveTexture(GL_TEXTURE6);
+	// glBindTexture(GL_TEXTURE_2D, texture_Normal);
 
     //Display Shader
     Pattern->Use();
-    Pattern->SetUniformVariable("uTime", TimeCycle);
-    Pattern->SetUniformVariable("uTime", TimeCycle);
     Pattern->SetUniformVariable("uKa", 1);
-    Pattern->SetUniformVariable("uKd", TimeCycle);
+    Pattern->SetUniformVariable("uKd", 1);
     Pattern->SetUniformVariable("uKs", 1);
-    Pattern->SetUniformVariable("uSpecularColor", 1);
+    Pattern->SetUniformVariable("uShininess", 1);
+    Pattern->SetUniformVariable("uFreq", 1);
+    // Pattern->SetUniformVariable("Color_Map", 5);
+    // Pattern->SetUniformVariable("Normal_Map", 6);
+    // Pattern->SetUniformVariable("Normal_Map", GL_TEXTURE5);
     BindTexture(panel2D, texture);
     Pattern->UnUse();
-
-
 }
 
 void WorldUpdate()

@@ -1,28 +1,28 @@
 
-ERROR: 0:8: Invalid storage qualifiers 'in' in global variable context
-ERROR: 0:8: Invalid storage qualifiers 'in' in global variable context
-ERROR: 0:9: Invalid storage qualifiers 'in' in global variable context
 ERROR: 0:9: Invalid storage qualifiers 'in' in global variable context
 ERROR: 0:10: Invalid storage qualifiers 'in' in global variable context
-ERROR: 0:14: Use of undeclared identifier 'EC_SurfacePosition'
-ERROR: 0:15: Use of undeclared identifier 'EC_EyePosition'
-ERROR: 0:15: Use of undeclared identifier 'EC_SurfacePosition'
-ERROR: 0:16: Use of undeclared identifier 'vST'
-ERROR: 0:16: Use of undeclared identifier 'EC_LightPosition'
-ERROR: 0:16: Use of undeclared identifier 'P'
-ERROR: 0:17: Use of undeclared identifier 'vST'
-ERROR: 0:18: Use of undeclared identifier 'L'
-ERROR: 0:18: Use of undeclared identifier 'EC_LightPosition'
-ERROR: 0:18: Use of undeclared identifier 'P'
-ERROR: 0:19: Use of undeclared identifier 'N'
-ERROR: 0:19: Use of undeclared identifier 'L'
-ERROR: 0:20: Use of undeclared identifier 'Diffuse_Intensity'
+ERROR: 0:11: Invalid storage qualifiers 'in' in global variable context
+ERROR: 0:12: Invalid storage qualifiers 'in' in global variable context
+ERROR: 0:13: Invalid storage qualifiers 'in' in global variable context
+ERROR: 0:17: Use of undeclared identifier 'EC_SurfacePosition'
+ERROR: 0:18: Use of undeclared identifier 'EC_EyePosition'
+ERROR: 0:18: Use of undeclared identifier 'EC_SurfacePosition'
+ERROR: 0:19: Use of undeclared identifier 'vST'
+ERROR: 0:19: Use of undeclared identifier 'EC_LightPosition'
+ERROR: 0:19: Use of undeclared identifier 'P'
 ERROR: 0:20: Use of undeclared identifier 'vST'
 ERROR: 0:21: Use of undeclared identifier 'L'
-ERROR: 0:21: Use of undeclared identifier 'N'
-ERROR: 0:21: Use of undeclared identifier 'E'
-ERROR: 0:21: Use of undeclared identifier 'Specular_Intensity'
-ERROR: 0:22: Use of undeclared identifier 'Ambient_Color'
-ERROR: 0:22: Use of undeclared identifier 'Diffuse_Color'
-ERROR: 0:22: Use of undeclared identifier 'Specular_Color'
+ERROR: 0:21: Use of undeclared identifier 'EC_LightPosition'
+ERROR: 0:21: Use of undeclared identifier 'P'
+ERROR: 0:22: Use of undeclared identifier 'N'
+ERROR: 0:22: Use of undeclared identifier 'L'
+ERROR: 0:23: Use of undeclared identifier 'Diffuse_Intensity'
+ERROR: 0:23: Use of undeclared identifier 'vST'
+ERROR: 0:24: Use of undeclared identifier 'L'
+ERROR: 0:24: Use of undeclared identifier 'N'
+ERROR: 0:24: Use of undeclared identifier 'E'
+ERROR: 0:24: Use of undeclared identifier 'Specular_Intensity'
+ERROR: 0:25: Use of undeclared identifier 'Ambient_Color'
+ERROR: 0:25: Use of undeclared identifier 'Diffuse_Color'
+ERROR: 0:25: Use of undeclared identifier 'Specular_Color'
 
